@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Método mouse Over y mouse Out de jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de uso de los métodos mouseover y mouseout de jQuery para modificar el value de un input"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script type="text/javascript" src="https://pablomonteserin.com/res/jquery/ex/jquery.js"></script>
+		<script src="javascript.js"></script>
+	</head>
+
+	<body>
+		<h1>Métodos 'mouseover' y 'mouseout' de jQuery</h1>
+
+		<input type="text" name="buscar" id="buscar" value="Buscar..." />
+
+		<script>
+			$(document).ready(function () {
+				$("#buscar").mouseover(function () {
+					$(this).val("primer texto");
+				});
+				$("#buscar").mouseout(function () {
+					$(this).val("segundo texto");
+				});
+			});
+		</script>
+	</body>
+</html>

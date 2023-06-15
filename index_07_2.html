@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>fade in fade out con jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de uso de los métodos fadeIn y fadeOut de jQuery para hacer aparecer y desaparecer un elemento"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Métodos fadeOut y fadeIn de jQuery</h1>
+		<input type="button" id="boton1" value="Ocultar recuadro" />
+		<input type="button" id="boton2" value="Mostrar recuadro" />
+		<div id="capaRoja" style="background-color: red; width: 300px; height: 300px">
+			<h1>Hola mundo</h1>
+		</div>
+		<div id="capaRoja2" style="background-color: blue; width: 300px; height: 300px">
+			<h1>Hola mundo2</h1>
+		</div>
+		<script>
+			$(document).ready(inicializarEventos);
+
+			function inicializarEventos() {
+				$("#boton1").click(function () {
+					$("#capaRoja").fadeOut("slow");
+				});
+				$("#boton2").click(function () {
+					$("#capaRoja").fadeIn("slow");
+				});
+			}
+		</script>
+	</body>
+</html>

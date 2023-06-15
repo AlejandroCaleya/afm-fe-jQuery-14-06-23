@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Ejercicio jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de como manipular los estilos de un elemento html mediante llamadas a los métodos css de jQuery"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body id="web">
+		<h1>Ejercicio de jQuery usando el método .css</h1>
+		<h2 id="titulo1">claro</h2>
+		<h2 id="titulo2">oscuro</h2>
+		<script>
+			let tc_color = "black";
+			let tc_bg = "lightblue";
+			$("#web").css("color", "green");
+			$("#web").css("background-color", "yellow");
+			$("#web").css("font-family", "Arial");
+			$(document).ready(function () {
+				$("#titulo1").on("click", function () {
+					$("#web").css("color", tc_color);
+					$("#web").css("background-color", tc_bg);
+					$("#web").css("font-family", "Arial");
+				});
+
+				$("#titulo2").on("click", function () {
+					$("#web").css("color", "white");
+					$("#web").css("background-color", "black");
+					$("#web").css("font-family", "Arial");
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>funciones show hide de jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de como mostrar y ocultar elementos de una página web mediante el uso de los métodos hide y show de jQuery"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Ejemplo de uso de los métodos show y hide de jQuery</h1>
+		<input type="button" id="boton1" value="Ocultar recuadro" />
+		<input type="button" id="boton2" value="Mostrar recuadro" />
+		<div id="capaRoja" style="background-color: red; width: 300px; height: 300px">
+			<h1>Hola</h1>
+			<h3>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente temporibus, laboriosam autem consequatur enim
+				id?
+			</h3>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente velit atque et eaque soluta eius accusamus
+				tempore nisi. At, repellendus.
+			</p>
+		</div>
+
+		<script>
+			$(document).ready(function () {
+				$("#boton1").click(function () {
+					$("#capaRoja").hide("slow");
+				});
+				$("#boton2").click(function () {
+					$("#capaRoja").show("fast");
+				});
+			});
+
+			/*"show" muestra el objeto con una animación que dura tantos milisegundos como le indicamos:
+        show([cantidad de milisegundos])
+        
+        "show" muestra el objeto con una animación que dura tantos milisegundos como le indicamos
+        y ejecuta al final la función que le pasamos como segundo parámetro:
+        show([cantidad de milisegundos],[función])
+        */
+		</script>
+	</body>
+</html>

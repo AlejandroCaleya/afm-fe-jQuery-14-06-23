@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<style>
+			#test1 {
+				background-color: blueviolet;
+				color: aliceblue;
+				width: 200px;
+				height: 200px;
+			}
+			#test2 {
+				background-color: blue;
+				color: aliceblue;
+				width: 200px;
+				height: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<button id="btn1">borrar con filtro</button>
+		<div id="test1">
+			<p class="uno">Clase 1_</p>
+			<p class="dos">Clase 2_</p>
+			<p class="tres">Clase 3_</p>
+			<p class="cuatro">Clase 4_</p>
+		</div>
+
+		<script>
+			$("#btn1").click(function () {
+				$("p").remove(".uno, .tres");
+			});
+		</script>
+	</body>
+</html>

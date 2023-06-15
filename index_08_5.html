@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Método move de jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de uso del método mousemove para recoger la coordenada y del ratón utilizando jQuery"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Mostrando las coordenadas del ratón al moverlo y hacer click con jQuery</h1>
+		<p id="corx"></p>
+		<p id="cory"></p>
+
+		<script>
+			$(document).ready(function () {
+				$(document).mousemove(function (event) {
+					$("#cory").text("coordenada y=" + event.pageY);
+				});
+				$(document).click(function (e) {
+					$("#corx").text("coordenada x=" + e.pageX);
+				});
+			});
+		</script>
+	</body>
+</html>

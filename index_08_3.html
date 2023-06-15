@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<button id="btn1">text()</button>
+		<button id="btn2">html()</button>
+		<button id="btn3">val()</button>
+
+		<br /><br />
+		<input type="text" id="test2" /><br /><br />
+
+		<p id="test"><strong>HOLA</strong> ipsum dolor sit amet.</p>
+		<br />
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<script>
+			$("#btn1").click(function () {
+				alert("Text: " + $("#test").text());
+			});
+			$("#btn2").click(function () {
+				alert("HTML: " + $("#test").html());
+			});
+			$("#btn3").click(function () {
+				// $("#test2").val("value cambiado");
+				alert($("#test2").val());
+			});
+
+			$("#btn4").click(function () {
+				alert($("#img").attr("src"));
+			});
+
+			$("#btn5").click(function () {
+				$("#img").attr("class", "negrita"); //añade una clase a img
+				$("#img").attr("src", "http://via.placeholder.com/300"); //cambia imagen
+			});
+
+			$("#btn6").click(function () {
+				$("a").attr("href", "http://www.twooweb.es");
+			});
+		</script>
+	</body>
+</html>

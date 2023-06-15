@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Movimiento automático de slider usando jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de la programación de un slider hecho con jQuery que se desplaza automáticamente"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="javascript.js"></script>
+		<style>
+			#wrapper {
+				width: 500px;
+				height: 500px;
+				overflow: hidden;
+			}
+
+			#layers {
+				height: 500px;
+				transition: 1s;
+				display: flex;
+			}
+
+			.capa1 {
+				background: url(./tux1.png);
+			}
+
+			.capa2 {
+				background: url(./tux2.png);
+			}
+
+			.capa3 {
+				background: url(./tux3.png);
+			}
+
+			.capa {
+				width: 500px;
+				height: 500px;
+				transition: 1s;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Slider con transiciones animadas programado con jQuery</h1>
+		<a href="#" id="enlace1">Enlace 1</a>
+		<div id="wrapper">
+			<div id="layers">
+				<div class="capa1 capa"></div>
+				<div class="capa2 capa"></div>
+				<div class="capa3 capa"></div>
+			</div>
+		</div>
+		<script>
+			var contador = 0;
+			var n = 0;
+			$(function () {
+				n = $("#layers .capa").length;
+				var ancho_contenedora = n * 500;
+
+				$("#layers").css("width", ancho_contenedora + "px");
+				setInterval(function () {
+					avanza();
+				}, 1500);
+				$("#enlace1").click(function () {
+					avanza();
+				});
+			});
+
+			function avanza() {
+				contador++;
+				if (contador == n) contador = 0;
+				var desplazamiento = contador * 500;
+				var elemento = contador + 1;
+				$(".capa").css("opacity", 0).css("transform", "scale(0)");
+				$(".capa:nth-child(" + elemento + ")")
+					.css("opacity", 1)
+					.css("transform", "scale(1)");
+
+				$("#layers").css("margin-left", -desplazamiento + "px");
+			}
+		</script>
+	</body>
+</html>

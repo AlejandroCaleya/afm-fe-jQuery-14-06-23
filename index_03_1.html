@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        $(document).ready(function () {
+            $("#btn1").click(function () {
+                $("p").hide();//borra los tres elementos <p>
+            });
+            $("#btn2").click(function () {
+                $("#test").hide();
+            });
+            $("#btn3").click(function () {
+                $(".test").hide();
+            });
+        });
+
+        
+
+    </script>
+    <button id="btn1">Ocultar parrafo</p></button>
+    <button id="btn2">Ocultar elemento por id</p></button>
+    <button id="btn3">Ocultar elemento por class</p></button>
+    <p>Párrafo sin id ni class</p>
+    <p id="test">Párrafo con id</p>
+    <p class="test">Párrafo con class</p>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script>
+			$(document).ready(inicializarEventos);
+			function inicializarEventos() {
+				$("#eliminarElementos").click(function () {
+					$("div").empty();
+				});
+				$("#pintarCuadradoVerde").click(function () {
+					$("div").html("<span id='rqr' style='float:left; background-color:green; width:50px; height:30px'></span>");
+				});
+				$("#anadirElementoAlFinal").click(function () {
+					$("div").append("<span style=' float:left; background-color:blue'>texto al final</span>");
+				});
+				$("#anadirElementoAlPrincipio").click(function () {
+					$("div").prepend("<span style='float:left; background-color:green'>texto al pricipio</span>");
+				});
+				/*Mediante el método eq (equal) indicamos la posición del elemento que vamos a borrar*/
+
+				$("#eliminarUltimoElemento").click(function () {
+					$("span")
+						.eq($("span").length - 1)
+						.remove();
+				});
+				$("#eliminarPrimerElemento").click(function () {
+					$("span").eq(0).remove();
+				});
+			}
+		</script>
+
+		<h2>Métodos para manipular nodos del DOM con jQuery.</h2>
+		<div style="background-color: red; width: 400px; height: 200px"></div>
+		<input type="button" id="eliminarElementos" value="Eliminar elementos de la lista" /><br />
+		<input type="button" id="pintarCuadradoVerde" value="Pintar cuadrado verde" /><br />
+		<input type="button" id="anadirElementoAlFinal" value="Añadir un elemento al final" /><br />
+		<input type="button" id="anadirElementoAlPrincipio" value="Añadir un elemento al principio" /><br />
+		<input type="button" id="eliminarUltimoElemento" value="Eliminar el último elemento." /><br />
+		<input type="button" id="eliminarPrimerElemento" value="Eliminar el primer elemento." />
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Metodo css de jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de uso del método css de jQuery para cambiar los estilos de un elemento HTML"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<h1>Uso del método .css() de jQuery</h1>
+		<p>
+			Cuales de los siguientes lenguajes son orientados a objetos: <span class="resaltado">Java</span>, VB6,
+			<span class="resaltado">C++</span>,C, <span class="resaltado">C#</span>, Cobol ?
+		</p>
+		<input type="button" id="boton1" value="ver resultado" />
+
+		<script>
+			$(document).ready(function () {
+				$("#boton1").click(function () {
+					$(".resaltado").css("background-color", "red");
+				});
+			});
+		</script>
+	</body>
+</html>

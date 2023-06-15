@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<button id="btn4">attr() leer</button>
+		<button id="btn5">attr() escribir</button>
+		<button id="btn6">attr() cambiar href</button>
+
+		<br /><br />
+
+		<img id="img" src="http://via.placeholder.com/150" alt="imagen demo" /><br /><br />
+
+		<a href="http://www.google.com">Pulsar aqui</a>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<script>
+			$("#btn4").click(function () {
+				alert($("#img").attr("src"));
+			});
+
+			$("#btn5").click(function () {
+				$("#img").attr("class", "negrita"); //añade una clase a img
+				$("#img").attr("src", "http://via.placeholder.com/300"); //cambia imagen
+			});
+
+			$("#btn6").click(function () {
+				$("a").attr("href", "http://www.twooweb.es");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<p>ELEMENTO</p>
+		<script>
+			$("p").after("...Some after text.");
+			$("p").before("Some before text...");
+			function afterText() {
+				var txt1 = "<p>Text after.</p>"; // Create element with HTML
+				var txt2 = $("<p></p>").text("Text after."); // Create with jQuery
+				var txt3 = document.createElement("p"); // Create with DOM
+				txt3.innerHTML = "Text after.";
+				$("body").after(txt1, txt2, txt3); // Append the new elements
+			}
+
+			function beforeText() {
+				var txt1 = "<p>Text before.</p>"; // Create element with HTML
+				var txt2 = $("<p></p>").text("Text before."); // Create with jQuery
+				var txt3 = document.createElement("p"); // Create with DOM
+				txt3.innerHTML = "Text before.";
+				$("body").before(txt1, txt2, txt3); // Prepend the new elements
+			}
+
+			afterText();
+			beforeText();
+		</script>
+	</body>
+</html>

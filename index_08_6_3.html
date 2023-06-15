@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Slider con efecto animado con jQuery</title>
+
+		<meta
+			name="description"
+			content="Ejemplo de la programación de un slider que se desplaza utilizando efectos de CSS"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="javascript.js"></script>
+	</head>
+
+	<body>
+		<h1>Programación de un slider con animaciones usando jQuery</h1>
+		<a href="#" id="enlace1">Enlace 1</a>
+		<div id="wrapper">
+			<div id="layers">
+				<div class="capa1 capa"></div>
+				<div class="capa2 capa"></div>
+				<div class="capa3 capa"></div>
+			</div>
+		</div>
+		<script>
+			var contador = 0;
+			$(function () {
+				$("#enlace1").click(function () {
+					contador++;
+					if (contador == 3) contador = 0;
+					var desplazamiento = contador * 500;
+					var elemento = contador + 1;
+					$(".capa").css("opacity", 0).css("transform", "scale(0)");
+					$(".capa:nth-child(" + elemento + ")")
+						.css("opacity", 1)
+						.css("transform", "scale(1)");
+
+					$("#layers").css("margin-left", -desplazamiento + "px");
+				});
+			});
+		</script>
+	</body>
+</html>

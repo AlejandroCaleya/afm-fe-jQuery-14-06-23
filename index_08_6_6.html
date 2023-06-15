@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Página con slider moviendose en dos direcciones con jQuery</title>
+		<meta
+			name="description"
+			content="Ejemplo de la programación de un slider que se desplaza automáticamente al pulsar sobre un enlace, y cuando llega al final regresa en dirección contraria"
+		/>
+		<meta name="robots" content="noindex, follow" />
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="javascript.js"></script>
+
+		<style>
+			#wrapper {
+				width: 500px;
+				height: 500px;
+				overflow: hidden;
+			}
+
+			#layers {
+				height: 500px;
+				transition: 1s;
+				display: flex;
+			}
+
+			.capa1 {
+				background: url(./tux1.png);
+			}
+
+			.capa2 {
+				background: url(./tux2.png);
+			}
+
+			.capa3 {
+				background: url(./tux3.png);
+			}
+
+			.capa {
+				width: 500px;
+				height: 500px;
+				transition: 1s;
+			}
+
+			.capa:not(:first-child) {
+				transform: scale(0);
+				opacity: 0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Slider con efectos programado con jQuery</h1>
+		<a href="#" id="enlace1">Enlace 1</a>
+		<div id="wrapper">
+			<div id="layers">
+				<div class="capa1 capa"></div>
+				<div class="capa2 capa"></div>
+				<div class="capa3 capa"></div>
+			</div>
+		</div>
+		<script>
+			var n = 0;
+			var contador = 1;
+			var signo = 1;
+			$(function () {
+				n = $("#layers .capa").length;
+				var ancho_contenedora = n * 500;
+
+				$("#layers").css("width", ancho_contenedora + "px");
+				setInterval(function () {
+					avanza();
+				}, 1500);
+				$("#enlace1").click(function () {
+					avanza();
+				});
+			});
+
+			function avanza() {
+				var desplazamiento = contador * 500;
+				var elemento = contador + 1;
+				$(".capa").css("opacity", 0).css("transform", "scale(0)");
+				$(".capa:nth-child(" + elemento + ")")
+					.css("opacity", 1)
+					.css("transform", "scale(1)");
+
+				$("#layers").css("margin-left", -desplazamiento + "px");
+
+				if (contador >= n - 1 || contador < 1) {
+					signo = signo * -1;
+				}
+				contador = contador + 1 * signo;
+			}
+		</script>
+	</body>
+</html>
